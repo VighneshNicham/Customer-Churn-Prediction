@@ -1,118 +1,104 @@
-Customer Churn Prediction
+# **Customer Churn Prediction**
 
-Project Type: End-to-End Batch Prediction & Business Insights
-Tools & Technologies: Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, Kaggle
+**Project Type:** End-to-End Batch Prediction & Business Insights  
+**Tools & Technologies:** Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, Kaggle  
 
-Project Overview
+---
+
+## **Project Overview**
 
 Customer churn—when a customer stops using a service—is a major challenge for subscription-based businesses. This project demonstrates an end-to-end approach to predicting customer churn using a real-world telecom dataset, generating actionable business insights, and creating batch risk predictions.
 
-Objectives:
+### **Objectives**
+- Predict which customers are likely to churn (binary classification)
+- Identify key drivers of churn
+- Categorize customers into risk buckets for retention strategies
 
-Predict which customers are likely to churn (binary classification)
+---
 
-Identify key drivers of churn
+## **Dataset**
 
-Categorize customers into risk buckets for retention strategies
+- **Source:** [Kaggle Telco Customer Churn](https://www.kaggle.com/blastchar/telco-customer-churn)
+- **Description:** Customer demographic, account, and service usage data
+- **Target Variable:** `Churn` (Yes = 1, No = 0)
 
-Dataset
+---
 
-Source: Kaggle Telco Customer Churn
+## **Methodology**
 
-Description: Customer demographic, account, and service usage data
+### **1. Data Preprocessing**
+- Handled missing values and converted columns to correct data types  
+- Dropped irrelevant columns (`customerID`)  
+- Encoded categorical variables using one-hot encoding  
+- Converted target variable `Churn` to binary  
 
-Target Variable: Churn (Yes = 1, No = 0)
+### **2. Exploratory Data Analysis (EDA)**
+- Analyzed churn distribution across tenure, monthly charges, and contract types  
+- Visualized patterns using boxplots, bar charts, and heatmaps  
+- Identified high-risk customer segments  
 
-Methodology
-1. Data Preprocessing
+### **3. Feature Engineering**
+- Created tenure buckets to capture customer lifecycle stage  
+- Created `total_services` feature to summarize customer engagement  
+- Prepared final feature set for machine learning  
 
-Handled missing values and converted columns to correct data types
+### **4. Model Building**
+- **Logistic Regression:** Baseline, interpretable model  
+- **Random Forest:** Captures non-linear relationships and interactions  
+- Evaluated using accuracy, precision, recall, ROC-AUC, and confusion matrix  
 
-Dropped irrelevant columns (customerID)
+### **5. Feature Importance & Insights**
+- Short tenure, high monthly charges, and month-to-month contracts are key churn drivers  
+- Logistic Regression coefficients confirmed similar trends  
 
-Encoded categorical variables using one-hot encoding
+### **6. Batch Predictions & Risk Buckets**
+- Calculated churn probabilities for all customers  
+- Categorized into **High**, **Medium**, and **Low Risk** buckets  
 
-Converted target variable Churn to binary
+---
 
-2. Exploratory Data Analysis (EDA)
+## **Key Insights**
 
-Analyzed churn distribution across tenure, monthly charges, and contract types
+- **Short-tenure customers** are most likely to churn  
+- **Month-to-month contracts** have the highest churn rates  
+- **High monthly charges** increase churn probability  
+- **Multiple services and long-term contracts** reduce churn risk  
 
-Visualized patterns using boxplots, bar charts, and heatmaps
+---
 
-Identified high-risk customer segments
+## **Business Recommendations**
 
-3. Feature Engineering
+1. **High-Risk Customers (Churn Probability ≥ 0.6)**  
+   - Targeted retention campaigns, discounts, and loyalty programs  
 
-Created tenure buckets to capture customer lifecycle stage
+2. **Medium-Risk Customers (0.4 ≤ Churn Probability < 0.6)**  
+   - Engagement strategies and proactive monitoring  
 
-Created total_services feature to summarize customer engagement
+3. **Low-Risk Customers (Churn Probability < 0.4)**  
+   - Minimal intervention; maintain standard loyalty programs  
 
-Prepared final feature set for machine learning
+4. **Contract Strategy**  
+   - Promote 1–2 year contracts  
 
-4. Model Building
+5. **Pricing Strategy**  
+   - Review high monthly charges and offer flexible plans  
 
-Logistic Regression: Baseline model with high interpretability
+---
 
-Random Forest: Captures non-linear relationships and feature interactions
+## **Limitations**
 
-Evaluated models using accuracy, precision, recall, ROC-AUC, and confusion matrix
+- Dataset may not capture all churn drivers  
+- Assumes future data follows similar distribution  
+- No temporal churn modeling  
+- Class imbalance may affect risk identification  
 
-5. Feature Importance & Insights
+---
 
-Random Forest identified key churn drivers such as short tenure, high monthly charges, and month-to-month contracts
+⭐ **If you find this project useful, please consider giving it an upvote.**  
 
-Logistic Regression coefficients confirmed similar churn patterns
+🔗 **Project Link:**  
+https://www.kaggle.com/code/vighneshnicham/customer-churn-analysis  
 
-6. Batch Predictions & Risk Buckets
+---
 
-Calculated churn probabilities for all customers in the test set
-
-Categorized customers into High, Medium, and Low Risk buckets to support retention strategies
-
-Key Insights
-
-Short-tenure customers are the most likely to churn
-
-Month-to-month contracts exhibit the highest churn rates
-
-High monthly charges significantly increase churn probability
-
-Customers with multiple services or long-term contracts show lower churn risk
-
-Business Recommendations
-
-High-Risk Customers (Churn Probability ≥ 0.6)
-
-Launch targeted retention campaigns, discounts, or loyalty programs
-
-Medium-Risk Customers (0.4 ≤ Churn Probability < 0.6)
-
-Increase engagement and monitor early churn indicators
-
-Low-Risk Customers (Churn Probability < 0.4)
-
-Minimal intervention required; maintain standard loyalty programs
-
-Contract Strategy
-
-Promote 1–2 year contracts to reduce churn
-
-Pricing Strategy
-
-Review high monthly charges and offer flexible pricing plans
-
-Limitations
-
-Dataset may not capture all behavioral or external churn factors
-
-Batch predictions assume future data follows a similar distribution
-
-No temporal modeling for churn trends over time
-
-Class imbalance may affect identification of high-risk customers
-
-⭐ If you find this project useful, please consider giving it an upvote. Your support is appreciated.
-
-🔗 Project Link:
-https://www.kaggle.com/code/vighneshnicham/customer-churn-analysis
+# **Customer-Churn-Prediction**
